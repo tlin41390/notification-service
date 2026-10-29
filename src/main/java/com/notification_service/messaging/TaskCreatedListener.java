@@ -20,6 +20,6 @@ public class TaskCreatedListener {
     @JmsListener(destination = "task.created.queue")
     public void onTaskCreated(TaskCreatedEvent event) {
         notificationService.create(event.taskId(), "Task created: " + event.title());
-        log.info("Recorded otification for task {}", event.taskId());
+        log.info("Recorded notification for task {}", event.taskId());
     }
 }
